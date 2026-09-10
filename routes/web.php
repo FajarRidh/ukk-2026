@@ -55,14 +55,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
 
     Route::get('/database/export', [DatabaseController::class, 'export'])->name('admin.database.export');
-
-     //Kategori routes
-    Route::get('/kategori', [KategoriController::class, 'index'])->name('admin.kategori.index');
-    Route::get('/kategori/create', [KategoriController::class, 'create'])->name('admin.kategori.create');
-    Route::get('/kategori/{id}/edit',[KategoriController::class, 'edit'])->name('admin.kategori.edit');
-    Route::post('/kategori/store',[KategoriController::class, 'store'])->name('admin.kategori.store');
-    Route::put('/kategori/{id}',[KategoriController::class, 'update'])->name('admin.kategori.update');
-    Route::delete('/kategori/{id}',[KategoriController::class, 'delete'])->name('admin.kategori.delete');
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+    Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
+    Route::post('/kategori/store', [KategoriController::class, 'store'])->name('kategori.store');
+    Route::get('/kategori/{id_kategori}/edit', [kategoriController::class, 'edit'] )->name('kategori.edit');
+    Route::put('/kategori/{id_kategori}', [kategoriController::class, 'update'] )->name('kategori.update');
+    Route::delete('/kategori/{id_kategori}', [kategoriController::class, 'delete'] )->name('kategori.delete');
 });
 
 /*
@@ -75,6 +73,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 */
 // @generated-roles:start
 
+// @role:siswa:start
+Route::group(['prefix' => 'siswa', 'middleware' => 'siswa'], function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('siswa.dashboard');
+});
+// @role:siswa:end
 // @generated-roles:end
 
 /*
@@ -94,4 +97,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 |     Route::get('/dashboard', [DashboardController::class, 'index']);
 | });
 */
-

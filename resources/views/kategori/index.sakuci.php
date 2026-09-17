@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>Daftar Kategori</h1>
-<a href="{{ route('kategori.create') }}" class="btn btn-primary mb-3">Tambah Alat</a>
+<a href="{{ route('kategori.create') }}" class="btn btn-info mb-3">Tambah Alat</a>
 
 <table class = "table table-sm align-middle"> 
 <tr>

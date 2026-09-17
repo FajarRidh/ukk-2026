@@ -1,10 +1,9 @@
--- create_kategoris_table
+-- create_alats_table
 
-CREATE TABLE IF NOT EXISTS `kategori` (
-    id_kategori         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    kode_kategori       VARCHAR(10) NOT NULL,
-    nama_kategori       VARCHAR(255) NOT NULL,
-    keterangan          TEXT NULL,
+CREATE TABLE IF NOT EXISTS `alat` (
+    id_alat         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nama_alat       VARCHAR(255) NOT NULL,
+    kode_alat       VARCHAR(255) NOT NULL,
     created_at DATETIME NULL,
     updated_at DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
